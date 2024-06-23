@@ -5,9 +5,11 @@ const searchWeatherDiv = document.getElementById("search-weather");
 const searchIcon = document.getElementById("search-icon");
 searchButton.addEventListener("click", handleSearchButtonClick);
 cityInput.addEventListener("keydown", handleEnterKeyPress);
-searchIcon.addEventListener("click", () =>
-  searchWeatherDiv.classList.remove("search-weather-input")
-);
+searchIcon.addEventListener("click", () => {
+  searchWeatherDiv.classList.remove("search-weather-input");
+  weatherInfoElement.innerHTML = "";
+  searchIcon.classList.remove("search-icon-visiblity");
+});
 
 function handleSearchButtonClick() {
   const city = cityInput.value.trim();
@@ -30,11 +32,14 @@ function getWeather(city) {
   const cachedWeather = localStorage.getItem(city);
   if (cachedWeather) {
     const weather = JSON.parse(cachedWeather);
+    console.log(weather);
+
     displayWeather(weather);
   } else {
     fetchWeatherData(city)
       .then((weather) => {
         localStorage.setItem(city, JSON.stringify(weather));
+        console.log(weather);
         displayWeather(weather);
       })
       .catch((error) => console.error(error));
@@ -51,9 +56,9 @@ function displayWeather(weather) {
   const weatherHTML = ` <h2>${weather.name}</h2>
     <img src="https://openweathermap.org/img/wn/${
       weather.weather[0].icon
-    }@2x.png" width="150px"/>
-   
-    <p class="temperature"> ${Math.round(weather.main.temp)}&#8451;</p>
+    }@2x.png" width="150px" alt="Icon"/>
+
+    <p class="temperature"> ${Math.round(weather.main.temp)}<sup>o</sup></p>
     <small>${weather.weather[0].main}<small/>
 
     <div class="weather-info">

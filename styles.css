@@ -1,12 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
-  background-image: url("./bannerImg.png");
-  background-position: center;
-  /* font-family: Arial, sans-serif; */
+  background-color: #000000;
   font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
+}
+
+.bg-image {
+  position: absolute;
+  background-image: url("./background2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  height: 100vh;
+  width: 100vw;
+  background-position: 20%;
+  filter: blur(1px);
+  opacity: 0.6;
 }
 
 .container {
@@ -21,13 +31,27 @@ body {
 }
 .weather-app {
   position: relative;
-  background-image: linear-gradient(#14b9f9, #116ef3);
-  color: white;
+  background-image: linear-gradient(
+    210deg,
+    #043481a9 5%,
+    #01dafb77,
+    #3007628d 80%
+  ) !important;
+  color: #ffffff !important;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 300px;
+  box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
+  -webkit-box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
+  -moz-box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 #city-input {
@@ -38,6 +62,13 @@ body {
   width: 200px;
   margin-right: 10px;
   font-size: 16px;
+  background-color: #08143a91;
+  color: #ffffff;
+}
+
+#city-input:focus {
+  outline: 2px solid #1abe74;
+  background-color: #082c3a91;
 }
 
 #search-button {
@@ -45,17 +76,17 @@ body {
   outline: none;
   border: none;
   color: aliceblue;
-  background-color: #1f1f1f;
-  padding: 10px;
+  background-color: #08143ab6;
+  padding: 9px 10px;
   border-radius: 8px;
 }
 
 #search-button:hover {
-  background-color: #000000;
+  background-color: #08143a;
 }
 
 #search-button:active {
-  background-color: #3b3b38;
+  background-color: #000000;
 }
 
 #weather-info {
@@ -63,15 +94,18 @@ body {
 }
 
 #weather-info h2 {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
   margin: 0;
 }
 
 .temperature {
-  font-size: 45px;
-  font-weight: 500;
+  font-size: 105px;
+  font-weight: 300;
   margin: 0;
+  margin-top: -50px;
+  /* line-height: 0; */
 }
 
 .weather-info {
@@ -90,6 +124,13 @@ body {
 
 i {
   font-size: 18px;
+}
+
+sup {
+  font-size: 20px;
+  line-height: 60px;
+  font-weight: 500;
+  vertical-align: top;
 }
 
 .info-container h3 {
