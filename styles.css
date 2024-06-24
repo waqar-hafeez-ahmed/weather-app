@@ -168,3 +168,7 @@ sup {
 .search-icon-visiblity {
   display: block;
 }
+
+#loading {
+  display: none;
+}
