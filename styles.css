@@ -11,10 +11,10 @@ body {
   position: absolute;
   background-image: url("./background2.jpg");
   background-repeat: no-repeat;
-  background-size: 100vw auto;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
-  background-position: 20%;
+  background-position: center;
   filter: blur(1px);
   opacity: 0.6;
 }
@@ -42,7 +42,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 80%;
+  max-width: 300px;
   box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
   -webkit-box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
   -moz-box-shadow: 1px 6px 29px 5px rgba(30, 27, 29, 0.74);
@@ -163,6 +164,8 @@ sup {
   position: absolute;
   right: 10%;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .search-icon-visiblity {
