@@ -14,7 +14,8 @@ const handleSearchAgain = () => {
 };
 
 const handleSearchButton = () => {
-  const city = cityInput.value;
+  const city = cityInput.value.replace(/[^A-Za-z\s]/g, "");
+  console.log(city);
   if (!city) {
     alert("Please enter a city name");
     return;
@@ -55,7 +56,7 @@ const getWeather = (city) => {
     )
       .then((response) => response.json())
       .then((weather) => {
-        if (weather.cod == 404) {
+        if (weather.cod >= 404) {
           alert(weather.message);
           loadingMsg.style.display = "none";
           handleSearchAgain();
