@@ -17,7 +17,7 @@ const handleSearchButton = () => {
   const city = cityInput.value.replace(/[^A-Za-z\s]/g, "");
   console.log(city);
   if (!city) {
-    alert("Please enter a city name");
+    alert("Please enter a valid a city name");
     return;
   }
   getWeather(city);
